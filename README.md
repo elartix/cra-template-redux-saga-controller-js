@@ -3,9 +3,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ```
-npx create-react-app --template [YOUR_TEMPLATE_NAME]
+npx create-react-app --template https://github.com/elartix/cra-template-redux-saga-controller-js
 # or
-yarn create react-app --template [YOUR_TEMPLATE_NAME]
+yarn create react-app --template https://github.com/elartix/cra-template-redux-saga-controller-js
 ```
 
 ## Connected packages
