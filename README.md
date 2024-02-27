@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+```
+npx create-react-app --template [YOUR_TEMPLATE_NAME]
+# or
+yarn create react-app --template [YOUR_TEMPLATE_NAME]
+```
+
 ## Connected packages
 - [React](https://reactjs.org)
 - [Axios](https://www.npmjs.com/package/axios)
