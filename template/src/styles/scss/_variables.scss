@@ -1,0 +1,34 @@
+@import "theme/variables";
+
+$image-dir: '~assets/images';
+$system-card-width: 408px;
+$system-card-message-width: 344px;
+
+// Rem Convert
+$rem-baseline: 16px !default;
+$rem-fallback: false !default;
+$rem-px-only: false !default;
+
+// Toastr
+$defaultSpace: 10px;
+$toastr-width: 350px !default;
+
+$infoBgColor: $white !default;
+$infoTextColor: #58abc3 !default;
+$infoIconColor: #58abc3 !default;
+$infoProgressBgColor: #58abc3 !default;
+
+$successBgColor: $white !default;
+$successTextColor: #60bb71 !default;
+$successIconColor: #60bb71 !default;
+$successProgressBgColor: #60bb71 !default;
+
+$warningBgColor: $white !default;
+$warningTextColor: #f7a336 !default;
+$warningIconColor: #f7a336 !default;
+$warningProgressBgColor: #f7a336 !default;
+
+$errorBgColor: $white !default;
+$errorTextColor: #db6a64 !default;
+$errorIconColor: #db6a64 !default;
+$errorProgressBgColor: #db6a64 !default;

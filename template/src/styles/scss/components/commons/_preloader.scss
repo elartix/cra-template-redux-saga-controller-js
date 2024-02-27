@@ -1,0 +1,139 @@
+/* ========================================================================
+     Component: Preloader
+ ========================================================================== */
+.app-preloader {
+  height: 100vh;
+}
+
+.box-preloader {
+  height: 100%;
+  padding: 12px;
+}
+
+.app-preloader, .box-preloader {
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  & > * { vertical-align: middle; }
+  &:after {
+    content: '';
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+  }
+}
+
+.processing-dots {
+  &:after {
+    //content: ' .';
+    content: ' \002E';
+    animation: processing-dots-animation 1s steps(5, end) infinite;
+  }
+}
+
+@include keyframes(processing-dots-animation) {
+  0%, 20% {
+    color: rgba(0,0,0,0);
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);
+  }
+  40% {
+    color: white;
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);
+  }
+  60% {
+    text-shadow:
+      .25em 0 0 white,
+      .5em 0 0 rgba(0,0,0,0);
+  }
+  80%, 100% {
+    text-shadow:
+      .25em 0 0 white,
+      .5em 0 0 white;
+  }
+}
+
+.processing-dots-2 {
+  &:after {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    @include animation(processing-dots-2-animation steps(4,end), 900ms, infinite, normal);
+    //animation: processing-dots-2-animation steps(4,end) 900ms infinite;
+    content: '\2026'; /* ascii code for the ellipsis character */
+    width: 0;
+  }
+}
+
+@include keyframes(processing-dots-2-animation) {
+  to {
+    width: 1.25em;
+  }
+}
+
+.move-progress-dot {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+
+  > div {
+    position: absolute;
+    top: 27px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: $primary;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+
+    &:nth-child(1),
+    &:first-child {
+      left: 6px;
+      animation: 0.6s ease 0s infinite normal none running lds-ellipsis1;
+    }
+    &:nth-child(2) {
+      left: 6px;
+      animation: 0.6s ease 0s infinite normal none running lds-ellipsis2;
+    }
+    &:nth-child(3) {
+      left: 26px;
+      animation: 0.6s ease 0s infinite normal none running lds-ellipsis2;
+    }
+    &:nth-child(4),
+    &:last-child {
+      left: 45px;
+      animation: 0.6s ease 0s infinite normal none running lds-ellipsis3;
+    }
+  }
+}
+
+@include keyframes(lds-ellipsis1) {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@include keyframes(lds-ellipsis2) {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(19px, 0px);
+  }
+}
+
+@include keyframes(lds-ellipsis3) {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

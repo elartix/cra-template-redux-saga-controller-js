@@ -1,0 +1,88 @@
+.navbar-main-app {
+  $navbar-system-height: 68px;
+  min-height: $navbar-system-height;
+
+  &.navbar-light {
+    &.fixed-top {
+      @include box-shadow-alt(0px 4px 16px rgba(200, 200, 200, 0.25));
+    }
+    //background-color: $white;
+    &.fixed-bottom{
+      @include box-shadow-alt(0px 4px 16px rgba(200, 200, 200, 0.25));
+    }
+
+    .navbar-brand {
+      color: $navbar-light-brand-color;
+
+      &:hover,
+      &:focus {
+        color: $navbar-light-brand-hover-color;
+      }
+    }
+
+    .navbar-nav {
+      .nav-item {
+        margin-right: $navbar-nav-link-padding-x;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      .nav-link {
+        color: $navbar-light-color;
+        padding: $navbar-nav-link-padding-x $navbar-nav-link-padding-x;
+        @include border-radius($border-radius);
+        @include transition($btn-transition);
+
+        &:hover,
+        &:focus {
+          //background-color: $teal;
+          color: $navbar-light-hover-color;
+        }
+
+        &.disabled {
+          color: $navbar-light-disabled-color;
+        }
+      }
+
+      .show > .nav-link,
+      .nav-link.active {
+        background-color: $teal;
+        color: $navbar-light-active-color;
+      }
+    }
+
+    .navbar-toggler {
+      color: $navbar-light-color;
+      border-color: $navbar-light-toggler-border-color;
+      //padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
+      &:focus {
+        @include box-shadow-alt(0 0 0 $navbar-toggler-focus-width $input-btn-focus-color)
+      }
+    }
+
+    .navbar-toggler-icon {
+      background-image: escape-svg($navbar-light-toggler-icon-bg);
+    }
+
+    .navbar-text {
+      color: $navbar-light-color;
+
+      a,
+      a:hover,
+      a:focus  {
+        color: $navbar-light-active-color;
+      }
+    }
+  }
+
+  + .main-layout {
+    padding-top: $navbar-system-height;
+    > div {
+      padding-top: $navbar-system-height;
+    }
+    .main-layout-content {
+      min-height: calc(var(--vh, 1vh) * 100 - #{$navbar-system-height});
+    }
+  }
+
+}

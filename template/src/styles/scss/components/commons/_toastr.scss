@@ -1,0 +1,84 @@
+.redux-toastr {
+  .top-left, .top-right, .top-center, .bottom-left, .bottom-right, .bottom-center {
+    @include backdrop-filter-blur(5px);
+  }
+  .toastr {
+    opacity: .94;
+    @include border-radius(var(--#{$prefix}border-radius-lg));
+    @include transition(all .15s ease);
+    @include box-shadow(2px 2px 18px rgba(239, 166, 121, 0.45));
+
+
+    &:hover:not(.rrt-message) {
+      opacity: 1;
+      @include box-shadow(2px 2px 18px rgba(239, 166, 121, 0.85));
+    }
+
+    .close-toastr span {
+      //top: 0;
+      //transform: translateY(0%);
+    }
+
+    .toastr-status {
+      &.success {
+        background-color: $successBgColor;
+      }
+
+      &.warning {
+        background-color: $warningBgColor;
+      }
+
+      &.info {
+        background-color: $infoBgColor;
+      }
+
+      &.error {
+        background-color: $errorBgColor;
+      }
+    }
+
+    &.rrt-info {
+      background-color: $infoBgColor;
+      color: $infoTextColor;
+      .rrt-progressbar {
+        background-color: darken($infoProgressBgColor, 15%);
+      }
+      .toastr-icon {
+        fill: $infoIconColor !important;
+      }
+    }
+
+    &.rrt-success {
+      background-color: $successBgColor;
+      color: $successTextColor;
+      .rrt-progressbar {
+        background-color: darken($successProgressBgColor, 15%);
+      }
+      .toastr-icon {
+        fill: $successIconColor !important;
+      }
+    }
+
+    &.rrt-warning {
+      background-color: $warningBgColor;
+      color: $warningTextColor;
+      .rrt-progressbar {
+        background-color: darken($warningProgressBgColor, 15%);
+      }
+      .toastr-icon {
+        fill: $warningIconColor !important;
+      }
+    }
+
+    &.rrt-error {
+      background-color: $errorBgColor;
+      color: $errorTextColor;
+      .rrt-progressbar {
+        background-color: darken($errorProgressBgColor, 15%);
+      }
+      .toastr-icon {
+        fill: $errorIconColor !important;
+      }
+    }
+  }
+}

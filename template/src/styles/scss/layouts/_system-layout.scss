@@ -1,0 +1,65 @@
+.navbar-system-app {
+  $navbar-system-height: 102px;
+  height: $navbar-system-height;
+
+  &.navbar-light {
+    &.fixed-top {
+      @include box-shadow-alt(0px 4px 16px rgba(200, 200, 200, 0.25));
+    }
+    //background-color: $white;
+    &.fixed-bottom{
+      @include box-shadow-alt(0px 4px 16px rgba(200, 200, 200, 0.25));
+    }
+  }
+
+  + .system-page.system-page-with-header {
+    > div {
+      padding-top: $navbar-system-height;
+    }
+    .system-content {
+      min-height: calc(var(--vh, 1vh) * 100 - #{$navbar-system-height});
+    }
+  }
+  + .system-page.system-page-with-footer {
+    > div {
+      padding-bottom: $navbar-system-height;
+    }
+  }
+}
+
+.system-page {
+  .system-content {
+    min-height: calc(var(--vh, 1vh) * 100 - #{$spacer*1.5*2});
+  }
+
+  .card-system {
+    max-width: $system-card-width;
+  }
+
+  .card-system-message {
+  }
+}
+
+.system-page-banner {
+  position: relative;
+  z-index: 0;
+  > * {
+    z-index: 1;
+  }
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  &:before {
+    //background: transparent url('#{$image-dir}/bg-system-pattern.png') center center no-repeat;
+    z-index: 0;
+  }
+  &:after {
+    //background: transparent url('#{$image-dir}/bg-system-img.png') bottom center no-repeat;
+    z-index: 0;
+  }
+}

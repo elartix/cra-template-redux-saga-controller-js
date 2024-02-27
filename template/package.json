@@ -1,0 +1,98 @@
+{
+  "name": "react-template-redux-saga-controller",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:local": "env-cmd -f .env.local npm run build",
+    "build:development": "env-cmd -f .env.development npm run build",
+    "build:staging": "env-cmd -f .env.staging npm run build",
+    "build:production": "env-cmd -f .env.production npm run build",
+    "test": "react-scripts test --watchAll=false --coverage",
+    "test:watch": "react-scripts test --coverage",
+    "eject": "react-scripts eject",
+    "clean": "rimraf .cache build coverage",
+    "postinstall": "patch-package --exclude 'nothing'"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-brands-svg-icons": "^6.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@react-keycloak/web": "^3.4.0",
+    "axios": "^0.26.1",
+    "bootstrap": "^5.2.3",
+    "classnames": "^2.3.2",
+    "date-fns": "^2.29.3",
+    "history": "^4.10.1",
+    "keycloak-js": "^20.0.3",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "prop-types": "^15.8.1",
+    "qs": "^6.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-image-crop": "^9.1.1",
+    "react-redux": "^7.2.9",
+    "react-redux-toastr": "^7.6.10",
+    "react-router-dom": "^5.3.4",
+    "react-use": "^17.4.0",
+    "react-vh": "^1.1.1",
+    "reactstrap": "^9.1.5",
+    "redux": "^4.2.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-first-history": "^5.1.1",
+    "redux-form": "^8.3.10",
+    "redux-saga": "^1.2.2",
+    "redux-saga-controller": "^1.2.0",
+    "web-vitals": "^3.1.1",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^8.34.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "husky": "^8.0.3",
+    "patch-package": "^6.5.1",
+    "react-scripts": "^5.0.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.58.1",
+    "sass-loader": "^13.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!@ngrx|(?!deck.gl)|?!some-package-1|?!some-package-2)"
+    ]
+  }
+}

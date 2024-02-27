@@ -1,0 +1,59 @@
+// Bootstrap Functions
+@import "~bootstrap/scss/functions";
+@import "theme/functions";
+
+// Bootstrap Mixins
+@import "~bootstrap/scss/mixins";
+
+// Fonts
+@import 'fonts/index';
+
+// Theme Variables
+@import "variables";
+
+// Root mixins
+@import 'mixins';
+
+// Bootstrap Maps
+@import "~bootstrap/scss/maps";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// toastr
+@import '~react-redux-toastr/src/styles/index';
+
+
+// Theme Core
+@import 'theme/index';
+
+// components
+@import 'components/index';
+
+
+// Layouts
+@import 'layouts/index';
+
+// Pages
+@import 'pages/index';
+
+html {
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+}
+
+html, body, #root {
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-weight: $font-weight-normal;
+}
+
+.scroll-behavior-smooth {
+  scroll-behavior: smooth;
+}

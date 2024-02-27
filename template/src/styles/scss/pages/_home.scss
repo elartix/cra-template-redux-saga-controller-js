@@ -1,0 +1,139 @@
+:root,[data-bs-theme="light"] {
+  --#{$prefix}purple: #ce900b;
+  --#{$prefix}violet: #f9b82c;
+  --#{$prefix}accent: #ffe484;
+  --#{$prefix}violet-rgb: 201.520718,126.062154,41.437846;
+  --#{$prefix}accent-rgb: 32,201,151;
+  --#{$prefix}pink-rgb: 32,201,151;
+  --#{$prefix}teal-rgb: 32,201,151;
+
+  --#{$prefix}violet-bg: var(--#{$prefix}violet);
+  --#{$prefix}sidebar-link-bg: rgba(var(--#{$prefix}violet-rgb), .1)
+}
+
+.bd-masthead {
+  --bd-pink-rgb: #{to-rgb($pink)};
+  padding: 3rem 0;
+  // stylelint-disable
+  background-image: linear-gradient(180deg, rgba(var(--#{$prefix}body-bg-rgb), .01), rgba(var(--#{$prefix}body-bg-rgb), 1) 85%),
+  radial-gradient(ellipse at top left, rgba(var(--#{$prefix}primary-rgb), .5), transparent 50%),
+  radial-gradient(ellipse at top right, rgba(var(--#{$prefix}accent-rgb), .5), transparent 50%),
+  radial-gradient(ellipse at center right, rgba(var(--#{$prefix}violet-rgb), .5), transparent 50%),
+  radial-gradient(ellipse at center left, rgba(var(--#{$prefix}pink-rgb), .5), transparent 50%);
+  // stylelint-enable
+
+  h1 {
+    @include font-size(4rem);
+  }
+
+  .lead {
+    @include font-size(1rem);
+    font-weight: 400;
+    color: var(--#{$prefix}secondary-color);
+  }
+
+  .bd-code-snippet {
+    margin: 0;
+    @include border-radius(.5rem);
+  }
+
+  .highlight {
+    width: 100%;
+    padding: .5rem 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: rgba(var(--#{$prefix}body-color-rgb), .075);
+    @include border-radius(.5rem);
+
+    @include media-breakpoint-up(lg) {
+      padding-right: 4rem;
+    }
+
+    pre {
+      padding: 0;
+      margin-top: 0.625rem;
+      margin-right: 1.875rem;
+      margin-bottom: 0.625rem;
+      white-space: pre;
+      background-color: transparent;
+      border: 0;
+
+      code {
+        font-size: inherit;
+        color: var(--#{$prefix}body-color);
+        word-wrap: normal;
+      }
+    }
+  }
+
+  .btn-clipboard {
+    position: absolute;
+    top: -.125rem;
+    right: 0;
+    background-color: transparent;
+    z-index: 2;
+    margin-top: .75rem;
+    margin-right: .75rem;
+  }
+
+  .bd-clipboard {
+    position: relative;
+    display: none;
+    float: right;
+
+    + .highlight {
+      margin-top: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  .btn-clipboard {
+    display: block;
+    padding: .5em;
+    line-height: 1;
+    color: var(--#{$prefix}body-color);
+    background-color: var(--#{$prefix}pre-bg);
+    border: 0;
+    @include border-radius(.25rem);
+
+    &:hover {
+      color: var(--#{$prefix}link-hover-color);
+    }
+
+    &:focus {
+      z-index: 3;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .lead {
+      @include font-size(1.5rem);
+    }
+  }
+}
+
+
+// Fix bash
+.language-sh .c { color: #565c64; }
+
+.chroma {
+  .language-bash,
+  .language-sh {
+    .line::before {
+      color: var(--base03);
+      content: "$ ";
+      user-select: none;
+    }
+  }
+
+  .language-powershell::before {
+    color: var(--base0C);
+    content: "PM> ";
+    user-select: none;
+  }
+}
+
