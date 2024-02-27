@@ -9,7 +9,7 @@
   "description": "The base template for Create React App.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TECH-Rubicone/cra-template-redux-saga-controller-js.git",
+    "url": "https://github.com/elartix/cra-template-redux-saga-controller-js.git",
     "directory": "/"
   },
   "license": "MIT",
@@ -17,7 +17,7 @@
     "node": ">=14"
   },
   "bugs": {
-    "url": "https://github.com/TECH-Rubicone/cra-template-redux-saga-controller-js/issues"
+    "url": "https://github.com/elartix/cra-template-redux-saga-controller-js/issues"
   },
   "files": [
     "template",
