@@ -14,7 +14,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "bugs": {
     "url": "https://github.com/elartix/cra-template-redux-saga-controller-js/issues"
